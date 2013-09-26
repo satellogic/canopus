@@ -1,0 +1,10 @@
+#ifndef _STAGE0_CFG_H
+#define _STAGE0_CFG_H
+
+#define STAGE0 1
+
+#define STAGE0_MAGIC_BOOTROM       0xDEADBABE
+#define STAGE0_MAGIC_UPGRADE       0xFFFFFFFF
+#define STAGE0_MAGIC_FIRMWARE      0x0B5E55ED
+
+#endif

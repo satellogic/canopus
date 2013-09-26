@@ -1,0 +1,61 @@
+Canopus framework and flight computer software for CubeBug cubesat platform (http://1.cubebug.org/)
+
+All the interesting code is inside src/lib/canopus
+
+Canopus is a HAL built from the concept of channels. Higher level code
+comunicates with devices (simulated or real ones) using channels.
+
+The real flight computer uses Canopus over FreeRTOS in a TI ARM TMS570.
+Also the same high level code can be built on posix (linux32 and linux64)
+thanks to Canopus and a port of FreeRTOS to posix.
+
+License
+=======
+
+Canopus is Satellogic SA Copyright 2013. All our code is GPLv3 licensed.
+
+Build instructions
+==================
+
+TI ARM TMS570
+-------------
+
+1. Download and install Code Composer Studio ver 5.4.0.00091 (linux)
+2. Import the following projects from projects/torino1500:
+    * halcogen_torino1500
+    * freertos+trace
+    * canopus+trace  
+    * cubebug2+trace    
+3. Build the projects in that order
+4. Upload canopus+trace_torino1500.out to your favourite torino board
+
+
+X86 and x86_64
+--------------
+
+1. Download and install Eclipse and CDT (C/C++) plugin
+2. Import the following projects from projects/linuxXX
+    * frertos_linuxXX
+    * canopus_linuxXX
+    * cubebug2_linuxXX
+3. Build
+4. Run ./projects/linux64/cubebug2/Debug/cubebug2_linux64
+
+
+Third party
+===========
+
+* FreeRTOS
+    Modified GPLv2, permits linking with closed source code
+* HalCoGen
+    Custom license, redistribution permited with open source
+* cmockery 
+    Copyright 2008 Google Inc. Apache License Version 2.0
+
+
+Contact us
+==========
+
+If you are interested or have any question, please send as an email!
+  
+  <oss AT satellogic DOT com>

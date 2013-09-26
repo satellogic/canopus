@@ -1,0 +1,8 @@
+When modifying the FreeRTOS code you must use the /* SATELLOGIC */ marker.
+
+Source/tasks.c
+--------------
+
+Remove `static` modifier from xTickCount (around line 155)
+Remove `static` modifier from xNumOfOverflows (around line 162)
+

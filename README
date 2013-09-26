@@ -1,4 +1,12 @@
-Canopus framework and flight computer software for CubeBug cubesat platform (http://1.cubebug.org/)
+Canopus framework and flight computer software for CubeBug cubesat
+platform (http://1.cubebug.org/)
+
+Here we are publishing the software for the CubeBug cubesat platform.
+The version we are releasing here is halfway between CubeBug-1 and CubeBug-2.
+
+It has been refactored after finishing CubeBug-1 and before starting
+developing CubeBug-2, and has already a lot of the functionality included
+in CubeBug-2.
 
 All the interesting code is inside src/lib/canopus
 

@@ -10,7 +10,6 @@
 #include <canopus/drivers/memory/channel_link_driver.h>
 #include <canopus/drivers/flash.h>
 
-#include <canopus/drivers/simusat/magnetometer.h>
 #include <canopus/drivers/simusat/gyroscope.h>
 #include <canopus/board/channels.h>
 
@@ -33,18 +32,6 @@ const channel_t *const ch_fpga_slave = &datadiscard_channel;
 
 const channel_t *const ch_startracker = &datadiscard_channel;
 const channel_t *const ch_nanowheel = &DECLARE_CHANNEL_TCP_CLIENT("127.0.0.1", PORT_NRW);
-
-/* Standalone Magnetometer */
-static posix_magnetometer_state_t magnetometer_1_state;
-static const magnetometer_t _magnetometer_1 = {
-	.base  = &posix_magnetometer_base,
-	.state = (magnetometer_state_t*)&magnetometer_1_state };
-
-const magnetometer_t * const magnetometer_1 = &_magnetometer_1;
-static magnetometer_config_t magnetometer_1_config = {
-    .scale      = MATRIXF_IDENTITY,
-    .bias       = {1, 1, 1}
-};
 
 /* Standalone Gyroscope */
 static posix_gyroscope_state_t gyroscope_0_state;
@@ -89,13 +76,6 @@ static inline void
 board_i2c_init()
 {
     i2c_lock_init();
-}
-
-// TODO move out
-retval_t
-board_magnetometer_init()
-{
-    return magnetometer_initialize(magnetometer_1, &magnetometer_1_config);
 }
 
 // TODO move out

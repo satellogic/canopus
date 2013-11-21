@@ -11,7 +11,7 @@ in CubeBug-2.
 All the interesting code is inside src/lib/canopus
 
 Canopus is a HAL built from the concept of channels. Higher level code
-comunicates with devices (simulated or real ones) using channels.
+communicates with devices (simulated or real ones) using channels.
 
 The real flight computer uses Canopus over FreeRTOS in a TI ARM TMS570.
 Also the same high level code can be built on posix (linux32 and linux64)
@@ -56,7 +56,7 @@ Third party
 * FreeRTOS
     Modified GPLv2, permits linking with closed source code
 * HalCoGen
-    Custom license, redistribution permited with open source
+    Custom license, redistribution permitted with open source
 * cmockery 
     Copyright 2008 Google Inc. Apache License Version 2.0
 
